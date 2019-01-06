@@ -20,10 +20,10 @@
 #
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
-rm -fr doc
-cp -r static doc
+rm -fr docs
+cp -r static docs
 
-cat >doc/index.html <<EOF
+cat >docs/index.html <<EOF
 <html>
 <body>
 EOF
@@ -33,11 +33,11 @@ for SRC in source/*; do
 		continue
 	fi
 	NAME="${SRC:7:$((${#SRC}-11))}"	
-	./renderrecipe -fv "$SRC" doc/${NAME}.html
-	echo "<a href=\"${NAME}.html\">${NAME}</a><br />" >>doc/index.html
+	./renderrecipe -fv "$SRC" docs/${NAME}.html
+	echo "<a href=\"${NAME}.html\">${NAME}</a><br />" >>docs/index.html
 done
 
-cat >>doc/index.html <<EOF
+cat >>docs/index.html <<EOF
 </body>
 </html>
 EOF
