@@ -100,6 +100,15 @@
 		"baloney": {
 			"name":	"Fleischwurst"
 		},
+		"orange/organic": {
+			"name":	"Bio-Orange"
+		},
+		"orange/oil": {
+			"name":	"Orangenöl"
+		},
+		"vanilla": {
+			"name":	"Vanilleextrakt"
+		},
 		"salt": {
 			"name":	"Salz",
 			"sold": {
@@ -114,6 +123,7 @@
 		"pinch":		" Prise",
 		"teasp":		" Teelöffel",
 		"tblsp":		" Esslöffel",
-		"jar":			" Glas"
+		"jar":			" Glas",
+		"drop":			" Tropfen"
 	}
 }

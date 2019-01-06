@@ -5,6 +5,10 @@
 ${node.getcdata()}\
 %elif node.getname() == "i":
 ${m.getingredientname(node.getstrippedcdata())}\
+%elif node.getname() == "temp":
+<span class="temperature">${node.getstrippedcdata()}</span>\
+%elif node.getname() == "time":
+<span class="time">${node.getstrippedcdata()}</span>\
 %else:
 (UNKNOWN NODE ${node.getname()})
 %endif

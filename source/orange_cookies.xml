@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Orangenkekse" lang="de">
+	<ingredients>
+		<dough name="Teig">
+			<ingredient name="butter" count="225" unit="g" />
+			<ingredient name="sugar" count="200" unit="g" />
+			<ingredient name="vanilla" count="6" unit="g" />
+			<ingredient name="egg" count="55" unit="g" />
+
+			<ingredient name="flour" count="345" unit="g" />
+			<ingredient name="salt" count="1/2" unit="teasp" />
+			<ingredient name="bakingpowder" count="1/2" unit="teasp" />
+
+			<ingredient name="orange/organic" count="150" unit="g" />
+			<ingredient name="orange/oil" count="111" unit="drop" />		<!-- TODO -->
+		</dough>
+	</ingredients>
+	<serves>
+		<option value="cookies" count="1234" />		<!-- TODO -->
+	</serves>
+	<preparation>
+		<step>
+			<i>orange/organic</i> im Ganzen (mit Schale) in kleine Würfel (2x2x2mm) schneiden und auf ein Backblech auslegen. Eine Stunde bei <temp>50°C</temp> bis <temp>100°C</temp> im Ofen trocknen/backen und alle <time secs="900">15 Minuten</time> Ofentür für <time secs="300">5 Minuten</time> einen Spalt öffnen, damit die Feuchtigkeit abzieht.
+		</step>
+		<step>
+			Teig anrühren und Orangenstücke hineinrühren. Zu einem Quader formen (ca. 3x5x25cm) und den Quader in den Kühlschrank legen (<time secs="3600">1 Stunde</time> im Kühlschrank oder <time secs="1200">20 Minuten</time> Gefriertruhe).
+		</step>
+		<step>
+			Quader in 5mm dicke Scheiben schneiden und auf Backblech auslegen. Bei <temp>190°C</temp> <time secs="600">10 Minuten</time> backen.
+		</step>
+	</preparation>
+</recipe>
