@@ -1,0 +1,15 @@
+Reis
+====
+
+Benötigt:
+	${i("400 g Reis")}
+	${i("600 g Wasser")}
+	${i("5 EL Reisessig")}
+	${i("2 EL Zucker"})
+	${i("3 EL Salz"})!!!
+
+- Den Reis und das Wasser in einem Topf 2 Minuten offen kochen
+- Zucker und Salz im Reisessig auflösen und zugeben
+- Danach auf geringste Hitze stellen und 15 Minuten geschlossen weiterkochen
+- Vom Herd nehmen und weitete 10 Minuten ziehen lassen
+

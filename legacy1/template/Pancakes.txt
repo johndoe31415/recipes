@@ -1,0 +1,7 @@
+${i("2 Tassen Mehl")}
+${i("2 EL Zucker")}
+${i("4 TL Backpulver")}
+1 TL 	Salz
+2  	Ei(er), geschlagen
+1 1/2 Tasse/n 	Milch
+1/4 Tasse/n 	Öl 

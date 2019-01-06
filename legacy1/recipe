@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import sys
+from RecipeTemplate import RecipeTemplate
+
+template = RecipeTemplate("Pancakes.txt")
+template.render()
