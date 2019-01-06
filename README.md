@@ -7,5 +7,8 @@ over the time.
 ## Dependencies
 Python3 and mako.
 
+## Preview
+You can view a very simple rendering [at the Github pages for this project](https://johndoe31415.github.io/recipes/).
+
 ## License
 GNU GPL-3.
