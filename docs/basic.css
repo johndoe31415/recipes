@@ -31,3 +31,11 @@ div.step {
 	margin-left: 10px;
 	margin-bottom: 15px;
 }
+
+span.temperature {
+	color: #c0392b;
+}
+
+span.time {
+	color: #2980b9;
+}
