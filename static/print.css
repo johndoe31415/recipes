@@ -1,0 +1,18 @@
+div.step {
+	width: 100%;
+}
+
+span.scaletext {
+	color: black;
+	font-weight: bold;
+}
+
+span.temperature {
+	color: black;
+	font-weight: bold;
+}
+
+span.time {
+	color: black;
+	font-weight: bold;
+}
