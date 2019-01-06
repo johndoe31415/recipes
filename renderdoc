@@ -1,0 +1,43 @@
+#!/bin/bash -e
+#	recipes - Python-based HTML5 generation for cooking recipes
+#	Copyright (C) 2019-2019 Johannes Bauer
+#
+#	This file is part of recipes.
+#
+#	recipes is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; this program is ONLY licensed under
+#	version 3 of the License, later versions are explicitly excluded.
+#
+#	recipes is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with recipes; if not, write to the Free Software
+#	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+#	Johannes Bauer <JohannesBauer@gmx.de>
+
+rm -fr doc
+cp -r static doc
+
+cat >doc/index.html <<EOF
+<html>
+<body>
+EOF
+
+for SRC in source/*; do
+	if [ ! -f "$SRC" ]; then
+		continue
+	fi
+	NAME="${SRC:7:$((${#SRC}-11))}"	
+	./renderrecipe -fv "$SRC" doc/${NAME}.html
+	echo "<a href=\"${NAME}.html\">${NAME}</a><br />" >>doc/index.html
+done
+
+cat >>doc/index.html <<EOF
+</body>
+</html>
+EOF
