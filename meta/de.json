@@ -118,12 +118,14 @@
 		}
 	},
 	"units": {
-		"g":			"g",
-		"ml":			"ml",
-		"pinch":		" Prise",
-		"teasp":		" Teelöffel",
-		"tblsp":		" Esslöffel",
-		"jar":			" Glas",
-		"drop":			" Tropfen"
+		"g":				"g",
+		"ml":				"ml",
+		"pinch":			" Prise",
+		"teasp":			" Teelöffel",
+		"tblsp":			" Esslöffel",
+		"jar":				" Glas",
+		"drop":				" Tropfen",
+		"bottle":			" Flasche",
+		"bottle/tiny":		" Fläschchen"
 	}
 }

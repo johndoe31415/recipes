@@ -1,12 +1,8 @@
 {
 	"sugar": {
-		"tsp":		"10 g",	
-		"tblsp":	"123 g",
-		"cup":		"99 g"
+		"cup":		"200 g"
 	},
 	"flour": {
-		"tsp":		"10 g",	
-		"tblsp":	"123 g",
-		"cup":		"99 g"
+		"cup":		"130 g"
 	}
 }

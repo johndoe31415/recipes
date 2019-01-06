@@ -12,7 +12,7 @@
 			<ingredient name="bakingpowder" count="1/2" unit="teasp" />
 
 			<ingredient name="orange/organic" count="150" unit="g" />
-			<ingredient name="orange/oil" count="111" unit="drop" />		<!-- TODO -->
+			<ingredient name="orange/oil" count="1/2" unit="bottle/tiny" />
 		</dough>
 	</ingredients>
 	<serves>
