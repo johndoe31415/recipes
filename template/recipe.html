@@ -26,7 +26,6 @@ ${render_step(step)}\
 
 <h1>${r.name}</h2>
 
-
 <h2>Zutaten</h2>
 %for ingredient_class in r.ingredient_classes:
 	%if r.ingredient_class_cnt > 1:
@@ -36,10 +35,14 @@ ${render_step(step)}\
 	<ul>
 	%for ingredient in ingredient_class:
 		<li>
-			%if ingredient.unit is not None:
-			<span class="scaletext"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span>${ingredient.unit}</span> ${ingredient.name}
+			%if ingredient.cardinality is not None:
+				%if ingredient.unit is not None:
+				<span class="scaletext"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span>${ingredient.unit}</span> ${ingredient.name}
+				%else:
+				<span class="scaletext"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span></span> ${ingredient.name}
+				%endif
 			%else:
-			<span class="scaletext"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span></span> ${ingredient.name}
+			${ingredient.name}
 			%endif
 		</li>
 	%endfor

@@ -32,7 +32,7 @@ class Ingredient():
 
 	@property
 	def cardinality(self):
-		return self._node["count"]
+		return self._node.get("count")
 
 	@property
 	def name(self):
@@ -49,7 +49,7 @@ class IngredientList():
 
 	@property
 	def name(self):
-		return self._node.getname()
+		return self._node["name"]
 
 	def __iter__(self):
 		for ingredient in self._node.ingredient:
@@ -66,7 +66,7 @@ class Recipe():
 
 	@property
 	def ingredient_class_cnt(self):
-		return len(list(self._xml.ingredients))
+		return len(list(node for node in self._xml.ingredients.getallchildren() if node.getname() != "#cdata"))
 
 	@property
 	def ingredient_classes(self):

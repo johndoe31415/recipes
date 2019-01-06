@@ -4,8 +4,7 @@
 			"name": "Eier",
 			"sold": {
 				"Packung":	"10"
-			},
-			"prefer":	null
+			}
 		},
 		"flour": {
 			"name":	"Mehl",
@@ -70,6 +69,37 @@
 			},
 			"prefer":	"teasp"
 		},
+		"pasta/spiral": {
+			"name":	"Spiralnudeln",
+			"sold": {
+				"Packung":	"500 g"
+			},
+			"prefer":	"g"
+		},
+		"apple": {
+			"name":	"Apfel"
+		},
+		"tomato": {
+			"name":	"Tomate"
+		},
+		"pickles": {
+			"name":	"Essiggurken"
+		},
+		"pepper": {
+			"name":	"Pfeffer"
+		},
+		"paprika/sweet": {
+			"name":	"Paprika Edelsüß"
+		},
+		"lemon/juice": {
+			"name":	"Zitronensaft"
+		},
+		"mayonnaise": {
+			"name":	"Mayonnaise"
+		},
+		"baloney": {
+			"name":	"Fleischwurst"
+		},
 		"salt": {
 			"name":	"Salz",
 			"sold": {
@@ -83,6 +113,7 @@
 		"ml":			"ml",
 		"pinch":		" Prise",
 		"teasp":		" Teelöffel",
-		"tblsp":		" Esslöffel"
+		"tblsp":		" Esslöffel",
+		"jar":			" Glas"
 	}
 }
