@@ -1,0 +1,33 @@
+body {
+	background-color: white;
+	font-family: sans-serif;
+	border: 25px;
+}
+
+h1 {
+	font-size: 1.75em;
+	text-decoration: underline wavy gray;	
+}
+
+h2 {
+	font-size: 1.25em;
+}
+
+h3 {
+	font-size: 1.1em;
+}
+
+span.scaletext {
+	color: green;
+}
+
+span.scaletext:hover {
+	color: red;
+	text-decoration: underline solid;
+}
+
+div.step {
+	width: 50%;
+	margin-left: 10px;
+	margin-bottom: 15px;
+}

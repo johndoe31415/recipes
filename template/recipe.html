@@ -1,0 +1,65 @@
+<%inherit file="base.html" />
+
+<%def name="render_content(node)">\
+%if node.getname() == "#cdata":
+${node.getcdata()}\
+%elif node.getname() == "i":
+${m.getingredientname(node.getstrippedcdata())}\
+%else:
+(UNKNOWN NODE ${node.getname()})
+%endif
+</%def>
+
+<%def name="render_step(node)">\
+%for content in node.getallchildren():
+${render_content(content)}\
+%endfor
+</%def>
+
+<%def name="render_preparation(node)">\
+%for step in node.step:
+<div class="step">
+${render_step(step)}\
+</div>
+%endfor
+</%def>
+
+<h1>${r.name}</h2>
+
+
+<h2>Zutaten</h2>
+%for ingredient_class in r.ingredient_classes:
+	%if r.ingredient_class_cnt > 1:
+	<h3>${ingredient_class.name}</h3>
+	%endif
+
+	<ul>
+	%for ingredient in ingredient_class:
+		<li>
+			%if ingredient.unit is not None:
+			<span class="scaletext"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span>${ingredient.unit}</span> ${ingredient.name}
+			%else:
+			<span class="scaletext"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span></span> ${ingredient.name}
+			%endif
+		</li>
+	%endfor
+	</ul>
+
+%endfor
+
+%if r.serves is not None:
+<h2>Genug für</h2>
+<ul>
+%for (count, value) in r.serves:
+	<li><span class="scaletext"><span class="scalar" original="${count}" cardinality="${count}">${count}</span></span> ${value}</li>
+%endfor
+</ul>
+%endif
+
+<h2>Zubereitung</h2>
+${render_preparation(r.preparation)}
+
+
+<script language="JavaScript">
+	initialize_recipe();
+</script>

@@ -1,0 +1,51 @@
+#!/usr/bin/python3
+#	recipes - Python-based HTML5 generation for cooking recipes
+#	Copyright (C) 2019-2019 Johannes Bauer
+#
+#	This file is part of recipes.
+#
+#	recipes is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; this program is ONLY licensed under
+#	version 3 of the License, later versions are explicitly excluded.
+#
+#	recipes is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with recipes; if not, write to the Free Software
+#	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+#	Johannes Bauer <JohannesBauer@gmx.de>
+
+import os
+import sys
+from mako.lookup import TemplateLookup
+from FriendlyArgumentParser import FriendlyArgumentParser
+from Metadata import Metadata
+from Recipe import Recipe
+
+parser = FriendlyArgumentParser()
+parser.add_argument("--metadir", metavar = "dirname", type = str, default = "meta", help = "Subdirectory for metadata. Defaults to %(default)s.")
+parser.add_argument("--templatedir", metavar = "dirname", type = str, default = "template", help = "Subdirectory for templates. Defaults to %(default)s.")
+parser.add_argument("-l", "--lang", metavar = "langname", type = str, default = "de", help = "Language to use. Defaults to %(default)s.")
+parser.add_argument("-f", "--force", action = "store_true", help = "Overwrite output file without aborting.")
+parser.add_argument("-v", "--verbose", action = "store_true", help = "Increase verbosity.")
+parser.add_argument("infile", metavar = "xml", type = str, help = "Recipe input XML file")
+parser.add_argument("outfile", metavar = "html", type = str, help = "Recipe output HTML file")
+args = parser.parse_args(sys.argv[1:])
+
+if (not args.force) and os.path.exists(args.outfile):
+	print("Output file '%s' exists, not continuing." % (args.outfile))
+	sys.exit(1)
+
+lookup = TemplateLookup([ args.templatedir ], strict_undefined = True, input_encoding = "utf-8")
+meta = Metadata(conversion_file = args.metadir + "/conversion.json", ingredient_file = args.metadir + "/" + args.lang + ".json")
+recipe = Recipe(xml_filename = args.infile, metadata = meta)
+
+template = lookup.get_template("recipe.html")
+output = template.render(r = recipe, m = meta)
+with open(args.outfile, "w") as f:
+	f.write(output)

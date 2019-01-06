@@ -68,7 +68,7 @@
 			"sold": {
 				"Packung":	"17 g"
 			},
-			"prefer":	"tsp"
+			"prefer":	"teasp"
 		},
 		"salt": {
 			"name":	"Salz",
@@ -77,5 +77,12 @@
 			},
 			"prefer":	"g"
 		}
+	},
+	"units": {
+		"g":			"g",
+		"ml":			"ml",
+		"pinch":		" Prise",
+		"teasp":		" Teelöffel",
+		"tblsp":		" Esslöffel"
 	}
 }
