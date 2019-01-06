@@ -1,0 +1,81 @@
+{
+	"ingredients": {
+		"egg": {
+			"name": "Eier",
+			"sold": {
+				"Packung":	"10"
+			},
+			"prefer":	null
+		},
+		"flour": {
+			"name":	"Mehl",
+			"sold": {
+				"Packung":	"1000 g"
+			},
+			"prefer":	"g"
+		},
+		"starch": {
+			"name":	"Stärke",
+			"sold": {
+				"Packung":	"400 g"
+			},
+			"prefer":	"g"
+		},
+		"butter": {
+			"name":	"Butter",
+			"sold": {
+				"Packung":	"250 g"
+			},
+			"prefer":	"g"
+		},
+		"sugar": {
+			"name":	"Zucker",
+			"sold": {
+				"Packung":	"1000 g"
+			},
+			"prefer":	"g"
+		},
+		"sugar/pwdr": {
+			"name":	"Puderzucker",
+			"sold": {
+				"Packung":	"250 g"
+			},
+			"prefer":	"g"
+		},
+		"cacao": {
+			"name":	"Kakaopulver",
+			"sold": {
+				"Packung":	"400 g"
+			},
+			"prefer":	"g"
+		},
+		"yogurt": {
+			"name":	"Jogurth 3.5%",
+			"sold": {
+				"Packung":	"500 ml"
+			},
+			"prefer":	"g"
+		},
+		"rum": {
+			"name":	"Rum",
+			"sold": {
+				"Flasche":	"500 ml"
+			},
+			"prefer":	"ml"
+		},
+		"bakingpowder": {
+			"name":	"Backpulver",
+			"sold": {
+				"Packung":	"17 g"
+			},
+			"prefer":	"tsp"
+		},
+		"salt": {
+			"name":	"Salz",
+			"sold": {
+				"Packung":	"1234 g"
+			},
+			"prefer":	"g"
+		}
+	}
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Waffles" lang="de">
+	<ingredients>
+		<dough>
+			<ingredient name="egg" count="4" />
+			<ingredient name="flour" count="100" unit="g" />
+			<ingredient name="starch" count="100" unit="g" />
+			<ingredient name="butter" count="175" unit="g" />
+			<ingredient name="sugar" count="125" unit="g" />
+			<ingredient name="yogurt" count="100" unit="g" />
+			<ingredient name="rum" count="1" unit="shot" />
+			<ingredient name="bakingpowder" count="1/2" unit="tsp" />
+			<ingredient name="salt" count="1" unit="pinch" />
+		</dough>
+	</ingredients>
+	<serves>
+		<option value="persons" count="3" />
+		<option value="waffles" count="10" />
+	</serves>
+	<preparation>
+		Mix !dough/egg !dough/flour !dough/starch !dough/butter bla bla make waffles.
+	</preparation>
+</recipe>
