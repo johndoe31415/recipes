@@ -7,7 +7,7 @@
 			<ingredient name="cheddar" count="150" unit="g" />
 			<ingredient name="salmon" count="300" unit="g" />
 			<ingredient name="haddock" count="300" unit="g" />
-			<ingredient name="olive_oil" />
+			<ingredient name="olive/oil" />
 		</pie>
 	</ingredients>
 	<preparation>
