@@ -117,6 +117,15 @@
 			},
 			"prefer":	"g"
 		},
+		"cheddar": {
+			"name":	"Cheddar"
+		},
+		"salmon": {
+			"name":	"Lachs"
+		},
+		"haddock": {
+			"name":	"Schellfisch"
+		},
 		"apple": {
 			"name":	"Apfel|Äpfel",
 			"prefer":	"#"
@@ -125,12 +134,18 @@
 			"name":	"Tomate|+n",
 			"prefer":	"#"
 		},
+		"potato": {
+			"name":	"Kartoffel"
+		},
 		"pickles": {
 			"name":	"Essiggurke|+n",
 			"prefer":	"g"
 		},
 		"carrot": {
 			"name":	"Karotte"
+		},
+		"mushroom": {
+			"name":	"Champignon"
 		},
 		"pepper": {
 			"name":	"Pfeffer"
