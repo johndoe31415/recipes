@@ -3,19 +3,33 @@
 	<ingredients>
 		<pie name="Auflauf">
 			<ingredient name="potato" count="1" unit="kg" />
-			<ingredient name="carrot" count="1" />			
+			<ingredient name="carrot" count="2" />			
 			<ingredient name="cheddar" count="150" unit="g" />
+			<ingredient name="mushroom" count="300" unit="g" />
 			<ingredient name="salmon" count="300" unit="g" />
 			<ingredient name="haddock" count="300" unit="g" />
+			<ingredient name="lemon" count="1" />
+			<ingredient name="tomato" count="2" />
+			<ingredient name="chilli_flakes" />
+			<ingredient name="pepper" />
+			<ingredient name="nutmeg" />
 			<ingredient name="olive/oil" />
 		</pie>
 	</ingredients>
 	<preparation>
 		<step>
-			<i>pasta/spiral</i> kochen, aber etwas härter als al dente. <i>egg</i> hart kochen und in Scheiben schneiden.
+			Backofen auf 180 °C Umluft vorheizen.
+		<step>
+			<i>potato</i> in Würfel schneiden und in Salzwasser 15 Minuten kochen. Abgießen und mit <i>olive/oil</i> zerstampfen. Mit <i>pepper</i> und <i>nutmeg</i> abschmecken.
 		</step>
 		<step>
-			Zutaten schnibbeln und verrühren. Dressing anrühren, gut würzen, abschmecken und dann darüber geben.
+			<i>carrot</i> und <i>cheddar</i> in eine Auflaufform reiben. <i>mushroom</i> in kleine Stücke schniedne und in die Auflaufform geben.
+		</step>
+		<step>
+			<i>salmon</i> und <i>haddock</i> in bissgroße Stücke schneiden und in die Auflaufform geben. Mit der Schale der <i>lemon</i>, dem Saft der <i>lemon</i>, Salz, <i>pepper</i> und <i>chilli_flakes</i> würzen und gut vermischen.
+		</step>
+		<step>
+			Das <i>potato</i>-Pürree auf dem Fisch verteilen. Glatt streichen und 40 Minuten im Ofen backen bis der Auflauf goldbraun ist.
 		</step>
 	</preparation>
 </recipe>
