@@ -104,7 +104,10 @@
 			"name":	"Bio-Orange"
 		},
 		"orange/oil": {
-			"name":	"Orangenöl"
+			"name":	"Orangenöl"	
+		},
+		"olive/oil": {
+			"name":	"Olivenöl"
 		},
 		"vanilla": {
 			"name":	"Vanilleextrakt"
