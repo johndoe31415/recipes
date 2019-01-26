@@ -19,25 +19,28 @@
 #
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
-import json
-from SingularPlural import SingularPlural
+class SingularPlural():
+	def __init__(self, text):
+		if "|" in text:
+			(self._singular, ext) = text.split("|", maxsplit = 1)
+			if ext.startswith("+"):
+				self._plural = self._singular + ext[1:]
+			else:
+				self._plural = ext
+		else:
+			self._singular = text
+			self._plural = text
 
-class Metadata():
-	def __init__(self, conversion_file, ingredient_file):
-		with open(conversion_file) as f:
-			self._conversion = json.load(f)
-		with open(ingredient_file) as f:
-			self._ingredient = json.load(f)
+	@property
+	def singular(self):
+		return self._singular
 
-	def getingredientname(self, cid):
-		ingredient = self._ingredient["ingredients"].get(cid)
-		if ingredient is None:
-			return SingularPlural(cid)
-		return SingularPlural(ingredient["name"])
+	@property
+	def plural(self):
+		return self._plural
 
-	def getunitname(self, unit_id):
-		return self._ingredient["units"].get(unit_id, unit_id)
-
-	def getservingname(self, serving_id):
-		return SingularPlural(self._ingredient["servings"].get(serving_id, serving_id))
-
+	def __call__(self, value):
+		if value == 1:
+			return self.singular
+		else:
+			return self.plural

@@ -2,7 +2,7 @@
 <recipe name="Waffles" lang="de">
 	<ingredients>
 		<dough name="Teig">
-			<ingredient name="egg" count="4" />
+			<ingredient name="egg/l" count="4" />
 			<ingredient name="flour" count="100" unit="g" />
 			<ingredient name="starch" count="100" unit="g" />
 			<ingredient name="butter" count="175" unit="g" />
@@ -14,15 +14,15 @@
 		</dough>
 	</ingredients>
 	<serves>
-		<option value="persons" count="3" />
-		<option value="waffles" count="10" />
+		<option value="person" count="1234" />
+		<option value="waffle" count="1234" />
 	</serves>
 	<preparation>
 		<step>
 			<i>butter</i> in der Mikrowelle schmelzen.
 		</step>
 		<step>
-			<i>butter</i>, <i>egg</i>, <i>flour</i>, <i>starch</i>, <i>yogurt</i>, <i>rum</i>, <i>bakingpowder</i> und <i>salt</i> zu einem Teig vermischen und damit die Waffeln zubereiten.
+			<i>butter</i>, <i>egg/l</i>, <i>flour</i>, <i>starch</i>, <i>yogurt</i>, <i>rum</i>, <i>bakingpowder</i> und <i>salt</i> zu einem Teig vermischen und damit die Waffeln zubereiten.
 		</step>
 	</preparation>
 </recipe>

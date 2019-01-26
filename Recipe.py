@@ -77,7 +77,7 @@ class Recipe():
 	@property
 	def serves(self):
 		if self._xml.getchild("serves") is not None:
-			return [ (node["count"], node["value"]) for node in self._xml.serves.option ]
+			return [ (node["count"], self._meta.getservingname(node["value"])) for node in self._xml.serves.option ]
 
 	@property
 	def preparation(self):

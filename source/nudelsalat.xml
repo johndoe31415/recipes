@@ -3,7 +3,7 @@
 	<ingredients>
 		<salad name="Salat">
 			<ingredient name="pasta/spiral" count="500" unit="g" />
-			<ingredient name="egg" count="4" />			
+			<ingredient name="egg/l" count="4" />
 			<ingredient name="apple" count="2" />
 			<ingredient name="tomato" count="5" />
 			<ingredient name="pickles" count="1" unit="jar" />
@@ -20,7 +20,7 @@
 	</ingredients>
 	<preparation>
 		<step>
-			<i>pasta/spiral</i> kochen, aber etwas härter als al dente. <i>egg</i> hart kochen und in Scheiben schneiden.
+			<i>pasta/spiral</i> kochen, aber etwas härter als al dente. <i>egg/l</i> hart kochen und in Scheiben schneiden.
 		</step>
 		<step>
 			Zutaten schnibbeln und verrühren. Dressing anrühren, gut würzen, abschmecken und dann darüber geben.

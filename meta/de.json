@@ -1,7 +1,7 @@
 {
 	"ingredients": {
-		"egg": {
-			"name": "Eier",
+		"egg/l": {
+			"name": "Ei (groß)|Eier (groß)",
 			"sold": {
 				"Packung":	"10"
 			}
@@ -65,7 +65,7 @@
 		"bakingpowder": {
 			"name":	"Backpulver",
 			"sold": {
-				"Packung":	"17 g"
+				"Päckchen":	"17 g"
 			},
 			"prefer":	"teasp"
 		},
@@ -77,13 +77,13 @@
 			"prefer":	"g"
 		},
 		"apple": {
-			"name":	"Apfel"
+			"name":	"Apfel|Äpfel"
 		},
 		"tomato": {
-			"name":	"Tomate"
+			"name":	"Tomate|+n"
 		},
 		"pickles": {
-			"name":	"Essiggurken"
+			"name":	"Essiggurke|+n"
 		},
 		"pepper": {
 			"name":	"Pfeffer"
@@ -101,7 +101,7 @@
 			"name":	"Fleischwurst"
 		},
 		"orange/organic": {
-			"name":	"Bio-Orange"
+			"name":	"Bio-Orange|+n"
 		},
 		"orange/oil": {
 			"name":	"Orangenöl"
@@ -120,12 +120,18 @@
 	"units": {
 		"g":				"g",
 		"ml":				"ml",
-		"pinch":			" Prise",
+		"pinch":			" Prise|+n",
 		"teasp":			" Teelöffel",
 		"tblsp":			" Esslöffel",
-		"jar":				" Glas",
+		"jar":				" Glas| Gläser",
 		"drop":				" Tropfen",
-		"bottle":			" Flasche",
+		"bottle":			" Flasche|+n",
 		"bottle/tiny":		" Fläschchen"
+	},
+	"servings": {
+		"cookie":			"Keks|+e",
+		"bakingsheet":		"Backblech|+e",
+		"person":			"Person|+en",
+		"waffle":			"Waffel|+n"
 	}
 }

@@ -1,8 +1,14 @@
 {
 	"sugar": {
-		"cup":		"200 g"
+		"density":	800
 	},
 	"flour": {
-		"cup":		"130 g"
+		"density":	520
+	},
+	"egg/l": {
+		"unit_weight":	"55 g"
+	},
+	"orange/organic": {
+		"unit_weight":	"180 g"
 	}
 }
