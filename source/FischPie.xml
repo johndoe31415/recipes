@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <recipe name="FischPie" lang="de">
 	<ingredients>
-		<salad name="Auflauf">
-			<ingredient name="potatoes" count="1000" unit="g" />
+		<pie name="Auflauf">
+			<ingredient name="potato" count="1" unit="kg" />
 			<ingredient name="carrot" count="1" />			
-			<ingredient name="Cheddar cheese" count="150" unit="g" />
-			<ingredient name="salmon fillets" count="300" unit="g" />
-			<ingredient name="haddock fillets" count="300" unit="g" />
-			<ingredient name="olive oil" />
-		</salad>
+			<ingredient name="cheddar" count="150" unit="g" />
+			<ingredient name="salmon" count="300" unit="g" />
+			<ingredient name="haddock" count="300" unit="g" />
+			<ingredient name="olive_oil" />
+		</pie>
 	</ingredients>
 	<preparation>
 		<step>
