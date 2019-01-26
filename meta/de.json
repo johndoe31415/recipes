@@ -85,6 +85,9 @@
 		"pickles": {
 			"name":	"Essiggurken"
 		},
+		"carrot": {
+			"name":	"Karotte"
+		},
 		"pepper": {
 			"name":	"Pfeffer"
 		},
@@ -96,6 +99,9 @@
 		},
 		"paprika/sweet": {
 			"name":	"Paprika Edelsüß"
+		},
+		"lemon": {
+			"name":	"Zitrone"
 		},
 		"lemon/juice": {
 			"name":	"Zitronensaft"
