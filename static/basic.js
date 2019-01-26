@@ -22,34 +22,61 @@
 */
 
 function text_to_value(text) {
-	if (text == "1/4") {
+	if ((text == "1/4") || (text == "¼")) {
 		return 0.25;
-	} else if (text == "1/2") {
+	} else if ((text == "1/2") || (text == "½")) {
 		return 0.5;
-	} else if (text == "3/4") {
+	} else if ((text == "3/4") || (text == "¾")) {
 		return 0.75;
 	} else {
-		return text | 0;
+		return text * 1.0;
 	}
 }
 
-function value_to_text(value) {
+function absfract(value) {
+	return Math.abs(value - Math.trunc(value));
+}
+
+function round_to_nearest(value, nearest) {
+	return Math.round(value / nearest) * nearest;
+}
+
+function value_to_text(value, do_round) {
 	if (Math.abs(value - 0.25) < 0.1) {
-		return "1/4";
+		return "¼";
 	} else if (Math.abs(value - 0.5) < 0.1) {
-		return "1/2";
+		return "½";
 	} else if (Math.abs(value - 0.75) < 0.1) {
-		return "3/4";
+		return "¾";
 	} else if (value < 1) {
 		return value.toFixed(2);
 	} else if (value < 10) {
-		return value.toFixed(1);
+		if ((absfract(value) < 0.2) || (absfract(value) > 0.8)) {
+			return value.toFixed(0);
+		} else {
+			return value.toFixed(1);
+		}
 	} else if (value < 100) {
-		return (Math.round(value / 5) * 5).toString();
+		if (do_round) {
+			return round_to_nearest(value, 5.0).toFixed(0);
+		} else {
+			return value.toFixed(0);
+		}
 	} else {
-		return (Math.round(value / 10) * 10).toString();
+		if (do_round) {
+			return round_to_nearest(value, 10.0).toFixed(0);
+		} else {
+			return value.toFixed(0);
+		}
 	}
 	return value;
+}
+
+function scalar_scaleby(node, scale_factor) {
+	const new_value = node.getAttribute("value") * scale_factor;
+	node.setAttribute("value", new_value);
+//	node.innerHTML = value_to_text(new_value, true) + " / " + new_value;
+	node.innerHTML = value_to_text(new_value, true);
 }
 
 function scalar_callback(event) {
@@ -60,18 +87,17 @@ function scalar_callback(event) {
 		scalar = event.target;
 	}
 
-	const old_value = scalar.getAttribute("value") | 0;
-	const new_value_text = prompt("Enter new value", value_to_text(old_value));
+	const old_value = scalar.getAttribute("value") * 1.0;
+	const new_value_text = prompt("Enter new value", value_to_text(old_value, false));
 	if (new_value_text == null) {
 		return;
 	}
 	const new_value = text_to_value(new_value_text);
 	const scale_factor = new_value / old_value;
+	console.log(old_value, new_value_text, new_value);
 
 	document.querySelectorAll(".scalar").forEach(function(node) {
-		const new_value = node.getAttribute("value") * scale_factor;
-		node.setAttribute("value", new_value);
-		node.innerHTML = value_to_text(new_value);
+		scalar_scaleby(node, scale_factor);
 	});
 }
 
@@ -82,6 +108,7 @@ function initialize_scalar(node) {
 function initialize_recipe() {
 	document.querySelectorAll(".scalar").forEach(function(node) {
 		node.setAttribute("value", text_to_value(node.innerHTML));
+		scalar_scaleby(node, 1.0);
 	});
 	document.querySelectorAll(".scaletext").forEach(function(node) {
 		initialize_scalar(node);
