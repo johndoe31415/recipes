@@ -10,5 +10,8 @@
 	},
 	"orange/organic": {
 		"unit_weight":	"180 g"
+	},
+	"milk": {
+		"density":	1000
 	}
 }

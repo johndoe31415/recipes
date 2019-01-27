@@ -1,5 +1,11 @@
 {
 	"ingredients": {
+		"milk": {
+			"name": "Vollmilch 3.5%"
+		},
+		"commonwheatmeal": {
+			"name": "Weichweizengrieß"
+		},
 		"egg/l": {
 			"name": "Ei (groß)|Eier (groß)",
 			"sold": {

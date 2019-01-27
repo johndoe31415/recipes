@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Grießbrei" lang="de">
+	<ingredients>
+		<dressing name="Brei">
+			<ingredient name="commonwheatmeal" count="3" unit="tblsp" />
+			<ingredient name="sugar" count="2" unit="tblsp" />
+			<ingredient name="starch" count="1" unit="tblsp" />
+			<ingredient name="milk" count="500" unit="ml" />
+		</dressing>
+	</ingredients>
+	<preparation>
+		<step>
+			<i>commonwheatmeal</i>, <i>sugar</i> und <i>starch</i> trocken in einer Tasse vermengen.
+		</step>
+		<step>
+			Milch zum Kochen aufsetzen. Löffelweise von der Milch in die Tasse geben und verrühren. Soviel zugeben, bis Mischung gut flüssig wird.
+		</step>
+		<step>
+			Wenn Milch kocht, Breimischung beigeben und noch etwa <time>1 Minute</time> kochen lassen. Dann vom Herd nehmen und <time>1 Minute</time> stehen lassen.
+		</step>
+	</preparation>
+</recipe>
