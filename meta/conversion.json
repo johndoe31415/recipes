@@ -1,17 +1,35 @@
 {
-	"sugar": {
-		"density":	800
+	"ingredients": {
+		"sugar": {
+			"density_g_per_l":		800
+		},
+		"flour": {
+			"density_g_per_l":		520
+		},
+		"egg/l": {
+			"unit_weight_grams":	55
+		},
+		"orange/organic": {
+			"unit_weight_grams":	180
+		},
+		"milk": {
+			"density_g_per_l":		1000
+		}
 	},
-	"flour": {
-		"density":	520
-	},
-	"egg/l": {
-		"unit_weight":	"55 g"
-	},
-	"orange/organic": {
-		"unit_weight":	"180 g"
-	},
-	"milk": {
-		"density":	1000
+	"units": {
+		"volume": {
+			"ml":		1,
+			"l":		1000,
+			"floz":		29.5735,
+			"cup":		240,
+			"tblsp":	14.8,
+			"teasp":	4.9333
+		},
+		"mass": {
+			"g":		1,
+			"kg":		1000,
+			"oz":		28.35,
+			"lbs":		453.59237
+		}
 	}
 }

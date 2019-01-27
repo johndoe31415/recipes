@@ -1,16 +1,19 @@
 {
 	"ingredients": {
 		"milk": {
-			"name": "Vollmilch 3.5%"
+			"name": "Vollmilch 3.5%",
+			"prefer":	"ml"
 		},
 		"commonwheatmeal": {
-			"name": "Weichweizengrieß"
+			"name": "Weichweizengrieß",
+			"prefer":	"g"
 		},
 		"egg/l": {
 			"name": "Ei (groß)|Eier (groß)",
 			"sold": {
 				"Packung":	"10"
-			}
+			},
+			"prefer":	"#"
 		},
 		"flour": {
 			"name":	"Mehl",
@@ -83,13 +86,16 @@
 			"prefer":	"g"
 		},
 		"apple": {
-			"name":	"Apfel|Äpfel"
+			"name":	"Apfel|Äpfel",
+			"prefer":	"#"
 		},
 		"tomato": {
-			"name":	"Tomate|+n"
+			"name":	"Tomate|+n",
+			"prefer":	"#"
 		},
 		"pickles": {
-			"name":	"Essiggurke|+n"
+			"name":	"Essiggurke|+n",
+			"prefer":	"g"
 		},
 		"pepper": {
 			"name":	"Pfeffer"
@@ -104,10 +110,12 @@
 			"name":	"Mayonnaise"
 		},
 		"baloney": {
-			"name":	"Fleischwurst"
+			"name":	"Fleischwurst",
+			"prefer":	"g"
 		},
 		"orange/organic": {
-			"name":	"Bio-Orange|+n"
+			"name":	"Bio-Orange|+n",
+			"prefer":	"#"
 		},
 		"orange/oil": {
 			"name":	"Orangenöl"
@@ -118,7 +126,7 @@
 		"salt": {
 			"name":	"Salz",
 			"sold": {
-				"Packung":	"1234 g"
+				"Packung":	"500 g"
 			},
 			"prefer":	"g"
 		}

@@ -21,6 +21,7 @@
 
 import json
 from SingularPlural import SingularPlural
+from UnitConversion import UnitConversion
 
 class Metadata():
 	def __init__(self, conversion_file, ingredient_file):
@@ -28,6 +29,16 @@ class Metadata():
 			self._conversion = json.load(f)
 		with open(ingredient_file) as f:
 			self._ingredient = json.load(f)
+		self._mass_units = UnitConversion(self._conversion["units"]["mass"])
+		self._volume_units = UnitConversion(self._conversion["units"]["volume"])
+
+	@property
+	def mass_units(self):
+		return self._mass_units
+
+	@property
+	def volume_units(self):
+		return self._volume_units
 
 	def getingredientname(self, cid):
 		ingredient = self._ingredient["ingredients"].get(cid)
@@ -44,3 +55,11 @@ class Metadata():
 	def getservingname(self, serving_id):
 		return SingularPlural(self._ingredient["servings"].get(serving_id, serving_id))
 
+	def get_density_of(self, ingredient_id):
+		return self._conversion["ingredients"].get(ingredient_id, { }).get("density_g_per_l")
+
+	def get_grams_per_unit_of(self, ingredient_id):
+		return self._conversion["ingredients"].get(ingredient_id, { }).get("unit_weight_grams")
+
+	def get_preferred_unit_of(self, ingredient_id):
+		return self._ingredient["ingredients"].get(ingredient_id, { }).get("prefer")

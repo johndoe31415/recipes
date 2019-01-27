@@ -20,27 +20,129 @@
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
 from XMLParser import XMLParser
+from Tools import Tools
 
 class Ingredient():
-	def __init__(self, node, metadata):
-		self._node = node
+	def __init__(self, ingredient_id, cardinality, unit_id, metadata, original_cardinality = None):
+		self._ingredient_id = ingredient_id
+		self._cardinality = cardinality
+		if (original_cardinality is None) and (cardinality is not None):
+			original_cardinality = "%.2f" % (cardinality)
+		self._original_cardinality = original_cardinality
+		self._unit_id = unit_id
 		self._meta = metadata
 
+	@classmethod
+	def from_xmlnode(cls, node, metadata):
+		ingredient_id = node.get("name")
+		if node.get("count") is not None:
+			original_cardinality = node["count"]
+			cardinality = Tools.str2float(node["count"])
+		else:
+			original_cardinality = None
+			cardinality = None
+		unit_id = node.get("unit")
+		return cls(ingredient_id = ingredient_id, cardinality = cardinality, unit_id = unit_id, metadata = metadata, original_cardinality = original_cardinality)
+
+	def _create_converted_to(self, new_cardinality, new_unit_id):
+		return Ingredient(ingredient_id = self.ingredient_id, cardinality = new_cardinality, unit_id = new_unit_id, metadata = self._meta)
+
 	@property
-	def unit(self):
-		return self._meta.getunitname(self._node.get("unit"))
+	def ingredient_id(self):
+		return self._ingredient_id
+
+	@property
+	def original_cardinality(self):
+		return self._original_cardinality
 
 	@property
 	def cardinality(self):
-		return self._node.get("count")
+		return self._cardinality
 
 	@property
-	def name(self):
-		return self._meta.getingredientname(self.iid)
+	def unit_id(self):
+		return self._unit_id
 
 	@property
-	def iid(self):
-		return self._node["name"]
+	def ingredient_name(self):
+		return self._meta.getingredientname(self.ingredient_id)
+
+	@property
+	def unit_name(self):
+		return self._meta.getunitname(self.unit_id)
+
+	@property
+	def is_unitary(self):
+		return self.unit_id is None
+
+	@property
+	def is_mass(self):
+		return self._meta.mass_units.is_known(self.unit_id)
+
+	@property
+	def is_volume(self):
+		return self._meta.volume_units.is_known(self.unit_id)
+
+	def _get_as_mass(self, unit = "g"):
+		if self.is_unitary:
+			# Check if there's a unitary lookup
+			grams_per_unit = self._meta.get_grams_per_unit_of(self.ingredient_id)
+			if grams_per_unit is not None:
+				return self._create_converted_to(self._meta.mass_units(self.cardinality * grams_per_unit, "g", unit), unit)
+		elif self.is_volume:
+			# Check if there's a density defined
+			density_g_per_l = self._meta.get_density_of(self.ingredient_id)
+			if density_g_per_l is not None:
+				volume_liters = self._meta.volume_units(self.cardinality, self.unit_id, "l")
+				mass_grams = density_g_per_l * volume_liters
+				return self._create_converted_to(self._meta.mass_units(mass_grams, "g", unit), unit)
+		elif self.is_mass:
+			# Just convert
+			return self._create_converted_to(self._meta.mass_units(self.cardinality, self.unit_id, unit), unit)
+
+	def _get_as_volume(self, unit = "ml"):
+		if self.is_volume:
+			# Just convert
+			return self._create_converted_to(self._meta.volume_units(self.cardinality, self.unit_id, unit), unit)
+		elif self.is_mass:
+			density_g_per_l = self._meta.get_density_of(self.ingredient_id)
+			if density_g_per_l is not None:
+				mass_grams = self._meta.mass_units(self.cardinality, self.unit_id, "g")
+				volume_liters = mass_grams / density_g_per_l
+				return self._create_converted_to(self._meta.volume_units(mass_grams, "l", unit), unit)
+
+	def _get_as_unitary(self):
+		if self.is_unitary:
+			# Just return this
+			return self
+		elif self.is_mass:
+			grams_per_unit = self._meta.get_grams_per_unit_of(self.ingredient_id)
+			if grams_per_unit is not None:
+				return self._create_converted_to(self._meta.mass_units(self.cardinality, self.unit_id, "g") / grams_per_unit, None)
+
+	def get_as(self, unit):
+		if self._meta.mass_units.is_known(unit):
+			return self._get_as_mass(unit)
+		elif self._meta.volume_units.is_known(unit):
+			return self._get_as_volume(unit)
+		elif unit == "#":
+			return self._get_as_unitary()
+		else:
+			return None
+
+	def get_preferred(self):
+		preferred = self._meta.get_preferred_unit_of(self.ingredient_id)
+		alt = None
+		if (preferred is not None):
+			alt = self.get_as(unit = preferred)
+		alt = alt or self
+		return alt
+
+	def __str__(self):
+		if self.is_unitary:
+			return "%.0f %s" % (self.cardinality, self.ingredient_id)
+		else:
+			return "%.1f %s %s" % (self.cardinality, self.unit_id, self.ingredient_id)
 
 class IngredientList():
 	def __init__(self, node, metadata):
@@ -53,7 +155,18 @@ class IngredientList():
 
 	def __iter__(self):
 		for ingredient in self._node.ingredient:
-			yield Ingredient(ingredient, self._meta)
+			yield Ingredient.from_xmlnode(ingredient, self._meta)
+
+	def dump(self):
+		for ingredient in self:
+			print("%s" % (ingredient))
+			if ingredient.get_mass() is not None:
+				print("    mass: %.0fg" % (ingredient.get_mass("g")))
+			if ingredient.get_volume() is not None:
+				print("    vol : %.0fml" % (ingredient.get_volume("ml")))
+			if ingredient.get_unitary_units() is not None:
+				print("    unit: %.1f" % (ingredient.get_unitary_units()))
+			print()
 
 class Recipe():
 	def __init__(self, xml_filename, metadata):

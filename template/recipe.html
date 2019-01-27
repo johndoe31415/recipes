@@ -30,6 +30,20 @@ ${render_step(step)}\
 %endfor
 </%def>
 
+<%def name="render_ingredient(ingredient)">\
+%if ingredient.cardinality is not None:
+	<span class="scaletext">
+		<span class="scalar" original="${ingredient.original_cardinality}">${ingredient.original_cardinality}</span>\
+%if ingredient.unit_id is not None:
+<span class="unit" singular="${ingredient.unit_name.singular}" plural="${ingredient.unit_name.plural}">${ingredient.unit_name(ingredient.cardinality)}</span>
+%endif
+		<span class="name" singular="${ingredient.ingredient_name.singular}" plural="${ingredient.ingredient_name.plural}">${ingredient.ingredient_name(ingredient.cardinality)}</span>
+	</span>
+%else:
+${ingredient.ingredient_name.singular}
+%endif
+</%def>
+
 <h1>${r.name}</h2>
 
 <h2>Zutaten</h2>
@@ -39,18 +53,12 @@ ${render_step(step)}\
 	%endif
 
 	<ul>
-	%for ingredient in ingredient_class:
+	%for orig_ingredient in ingredient_class:
+		<% ingredient = orig_ingredient.get_preferred() %>
 		<li>
-			%if ingredient.cardinality is not None:
-				<span class="scaletext">
-					<span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span>\
-%if ingredient.unit is not None:
-<span class="unit" singular="${ingredient.unit.singular}" plural="${ingredient.unit.plural}">${ingredient.unit(t.str2float(ingredient.cardinality))}</span>
-%endif
-					<span class="name" singular="${ingredient.name.singular}" plural="${ingredient.name.plural}">${ingredient.name(t.str2float(ingredient.cardinality))}</span>
-				</span>
-			%else:
-			${ingredient.name.singular}
+			<div class="ingredient preferred">${render_ingredient(ingredient)}</div>
+			%if (ingredient.is_unitary or ingredient.is_volume) and (ingredient.get_as("g") is not None):
+			<div class="ingredient alt">${render_ingredient(ingredient.get_as("g"))}</div>
 			%endif
 		</li>
 	%endfor
