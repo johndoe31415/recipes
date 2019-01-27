@@ -42,11 +42,13 @@ ${render_step(step)}\
 	%for ingredient in ingredient_class:
 		<li>
 			%if ingredient.cardinality is not None:
-				%if ingredient.unit is not None:
-				<span class="scaletext" singular="${ingredient.name.singular}" plural="${ingredient.name.plural}"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span>${ingredient.unit} <span class="name">${ingredient.name.singular}</span></span>
-				%else:
-				<span class="scaletext" singular="${ingredient.name.singular}" plural="${ingredient.name.plural}"><span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span> <span class="name">${ingredient.name.singular}</span></span>
-				%endif
+				<span class="scaletext">
+					<span class="scalar" original="${ingredient.cardinality}">${ingredient.cardinality}</span>\
+%if ingredient.unit is not None:
+<span class="unit" singular="${ingredient.unit.singular}" plural="${ingredient.unit.plural}">${ingredient.unit(t.str2float(ingredient.cardinality))}</span>
+%endif
+					<span class="name" singular="${ingredient.name.singular}" plural="${ingredient.name.plural}">${ingredient.name(t.str2float(ingredient.cardinality))}</span>
+				</span>
 			%else:
 			${ingredient.name.singular}
 			%endif
@@ -60,7 +62,7 @@ ${render_step(step)}\
 <h2>Genug für</h2>
 <ul>
 %for (count, value) in r.serves:
-	<li><span class="scaletext" singular="${value.singular}" plural="${value.plural}"><span class="scalar" original="${count}" cardinality="${count}">${count}</span> ${value.singular}</span></li>
+<li><span class="scaletext"><span class="scalar" original="${count}" cardinality="${count}">${count}</span> <span class="name" singular="${value.singular}" plural="${value.plural}">${value.singular}</span></span></li>
 %endfor
 </ul>
 %endif

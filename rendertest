@@ -21,6 +21,6 @@
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
 for name in waffles; do
-	./renderrecipe -fv source/${name}.xml static/${name}.html
-	cat static/${name}.html
+	./renderrecipe -fv source/${name}.xml docs/${name}.html
+	cat docs/${name}.html
 done

@@ -26,6 +26,7 @@ from mako.lookup import TemplateLookup
 from FriendlyArgumentParser import FriendlyArgumentParser
 from Metadata import Metadata
 from Recipe import Recipe
+from Tools import Tools
 
 parser = FriendlyArgumentParser()
 parser.add_argument("--metadir", metavar = "dirname", type = str, default = "meta", help = "Subdirectory for metadata. Defaults to %(default)s.")
@@ -46,6 +47,6 @@ meta = Metadata(conversion_file = args.metadir + "/conversion.json", ingredient_
 recipe = Recipe(xml_filename = args.infile, metadata = meta)
 
 template = lookup.get_template("recipe.html")
-output = template.render(r = recipe, m = meta)
+output = template.render(r = recipe, m = meta, t = Tools)
 with open(args.outfile, "w") as f:
 	f.write(output)

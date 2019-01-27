@@ -19,28 +19,15 @@
 #
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
-import json
-from SingularPlural import SingularPlural
-
-class Metadata():
-	def __init__(self, conversion_file, ingredient_file):
-		with open(conversion_file) as f:
-			self._conversion = json.load(f)
-		with open(ingredient_file) as f:
-			self._ingredient = json.load(f)
-
-	def getingredientname(self, cid):
-		ingredient = self._ingredient["ingredients"].get(cid)
-		if ingredient is None:
-			return SingularPlural(cid)
-		return SingularPlural(ingredient["name"])
-
-	def getunitname(self, unit_id):
-		if unit_id is None:
-			return None
+class Tools():
+	@classmethod
+	def str2float(cls, text):
+		if text in [ "1/4" ]:
+			return 0.25
+		elif text in [ "1/2" ]:
+			return 0.5
+		elif text in [ "3/4" ]:
+			return 0.75
 		else:
-			return SingularPlural(self._ingredient["units"].get(unit_id, unit_id))
-
-	def getservingname(self, serving_id):
-		return SingularPlural(self._ingredient["servings"].get(serving_id, serving_id))
+			return float(text)
 

@@ -72,45 +72,69 @@ function value_to_text(value, do_round) {
 	return value;
 }
 
-function scalar_scaleby(node, scale_factor) {
-	const new_value = node.getAttribute("value") * scale_factor;
-	node.setAttribute("value", new_value);
-//	node.innerHTML = value_to_text(new_value, true) + " / " + new_value;
-	node.innerHTML = value_to_text(new_value, true);
+function determine_singular_plural(node, value) {
+	if (node == null) {
+		return;
+	}
+	const singular = node.getAttribute("singular");
+	const plural = node.getAttribute("plural");
+	if (singular && plural) {
+		if (value == 1) {
+			node.innerHTML = singular;
+		} else {
+			node.innerHTML = plural;
+		}
+	}
 }
 
-function scalar_callback(event) {
-	let scalar = null;
-	if (event.target.getAttribute("original") == undefined) {
-		scalar = event.target.querySelector(".scalar");
-	} else {
-		scalar = event.target;
-	}
+function scaletext_scaleby(scaletext, scale_factor) {
+	const scalar = scaletext.querySelector(".scalar");
+
+	const new_value = scalar.getAttribute("value") * scale_factor;
+	scalar.setAttribute("value", new_value);
+	scalar.innerHTML = value_to_text(new_value, true);
+
+	const unit = scaletext.querySelector(".unit");
+	const name = scaletext.querySelector(".name");
+	determine_singular_plural(unit, scalar.innerHTML);
+	determine_singular_plural(name, scalar.innerHTML);
+}
+
+function scaletext_callback(scaletext) {
+	const scalar = scaletext.querySelector(".scalar");
 
 	const old_value = scalar.getAttribute("value") * 1.0;
 	const new_value_text = prompt("Enter new value", value_to_text(old_value, false));
-	if (new_value_text == null) {
+	if ((new_value_text == null) || (new_value_text <= 0)) {
 		return;
 	}
 	const new_value = text_to_value(new_value_text);
 	const scale_factor = new_value / old_value;
-	console.log(old_value, new_value_text, new_value);
 
-	document.querySelectorAll(".scalar").forEach(function(node) {
-		scalar_scaleby(node, scale_factor);
+	document.querySelectorAll(".scaletext").forEach(function(node) {
+		scaletext_scaleby(node, scale_factor);
 	});
 }
 
-function initialize_scalar(node) {
-	node.onclick = scalar_callback;
+function scaletext_event_callback(event) {
+	/* We get the event that we registered for scaletext, but the target can be
+	 * one of the subordinate <span>s. Therefore, we search the event path for
+	 * the right parent. */
+	for (let element of event.path) {
+		if (element.classList.contains("scaletext")) {
+			/* Got the right element */
+			scaletext_callback(element);
+			return;
+		}
+	}
 }
 
 function initialize_recipe() {
 	document.querySelectorAll(".scalar").forEach(function(node) {
 		node.setAttribute("value", text_to_value(node.innerHTML));
-		scalar_scaleby(node, 1.0);
 	});
 	document.querySelectorAll(".scaletext").forEach(function(node) {
-		initialize_scalar(node);
+		scaletext_scaleby(node, 1.0);
+		node.onclick = scaletext_event_callback;
 	});
 }
