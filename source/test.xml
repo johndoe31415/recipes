@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Test" lang="de">
+	<ingredients>
+		<dressing name="Test">
+			<ingredient name="commonwheatmeal" count="3" unit="tblsp" />
+			<ingredient name="flour" count="3" unit="tblsp" />
+			<ingredient name="sugar" count="2" unit="tblsp" />
+			<ingredient name="starch" count="1" unit="tblsp" />
+			<ingredient name="milk" count="500" unit="ml" />
+			<ingredient name="egg/l" count="1" />
+			<ingredient name="egg/l" count="55" unit="g" />
+			<ingredient name="egg/l" count="200" unit="g" />
+			<ingredient name="egg/l" count=".5" unit="kg" />
+			<ingredient name="pepper" count="10" unit="g" />
+			<ingredient name="flour" count="1" unit="cup" />
+
+			
+			<ingredient name="flour" count="2 2/3" unit="cup" />
+			<ingredient name="bakingpowder" count="1/2" unit="teasp" />
+			<ingredient name="salt" count="1/2" unit="teasp" />
+			<ingredient name="butter" count="1" unit="cup" />
+			<ingredient name="sugar" count="1" unit="cup" />
+			<ingredient name="vanilla" count="1 1/2" unit="teasp" />
+
+		</dressing>
+	</ingredients>
+	<preparation>
+		<step>
+			Cook it. Eat it. Yum.
+		</step>
+	</preparation>
+</recipe>

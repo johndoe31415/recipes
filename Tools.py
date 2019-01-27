@@ -19,15 +19,23 @@
 #
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
+import re
+
 class Tools():
+	_SIMPLE_FRACTION_RE = re.compile("(?P<numerator>\d+)\s*/\s*(?P<denominator>\d+)")
+	_WHOLE_SIMPLE_FRACTION_RE = re.compile("(?P<whole>\d+)\s+(?P<numerator>\d+)\s*/\s*(?P<denominator>\d+)")
+
 	@classmethod
 	def str2float(cls, text):
-		if text in [ "1/4" ]:
-			return 0.25
-		elif text in [ "1/2" ]:
-			return 0.5
-		elif text in [ "3/4" ]:
-			return 0.75
-		else:
-			return float(text)
+		text = text.strip()
+		match = cls._WHOLE_SIMPLE_FRACTION_RE.fullmatch(text)
+		if match:
+			match = match.groupdict()
+			return int(match["whole"]) + (int(match["numerator"]) / int(match["denominator"]))
 
+		match = cls._SIMPLE_FRACTION_RE.fullmatch(text)
+		if match:
+			match = match.groupdict()
+			return int(match["numerator"]) / int(match["denominator"])
+
+		return float(text)
