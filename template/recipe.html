@@ -60,6 +60,9 @@ ${ingredient.ingredient_name.singular}
 			%if (ingredient.is_unitary or ingredient.is_volume) and (ingredient.get_as("g") is not None):
 			<div class="ingredient alt">${render_ingredient(ingredient.get_as("g"))}</div>
 			%endif
+			%if ingredient.unit_id != orig_ingredient.unit_id:
+			<div class="ingredient original">${render_ingredient(orig_ingredient)}</div>
+			%endif
 		</li>
 	%endfor
 	</ul>
