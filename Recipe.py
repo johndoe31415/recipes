@@ -19,6 +19,7 @@
 #
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
+import collections
 from XMLParser import XMLParser
 from Tools import Tools
 
@@ -145,17 +146,65 @@ class Ingredient():
 			return "%.1f %s %s" % (self.cardinality, self.unit_id, self.ingredient_id)
 
 class IngredientList():
-	def __init__(self, node, metadata):
-		self._node = node
+	def __init__(self, name, items, metadata):
+		self._name = name
+		self._items = items
 		self._meta = metadata
+
+	@classmethod
+	def from_xmlnode(cls, node, metadata):
+		items = [ Ingredient.from_xmlnode(ingredient_node, metadata) for ingredient_node in node.ingredient ]
+		return cls(name = node["name"], items = items, metadata = metadata)
 
 	@property
 	def name(self):
-		return self._node["name"]
+		return self._name
+
+	def __iadd__(self, other):
+		def merge_items(ingredients):
+			by_mass = None
+			by_volume = None
+			remainder = [ ]
+			for ingredient in ingredients:
+				as_mass = ingredient.get_as("g")
+				if as_mass is not None:
+					# Can convert to mass!
+					if by_mass is None:
+						by_mass = as_mass
+					else:
+						by_mass._cardinality += as_mass.cardinality
+					continue
+
+				as_volume = ingredient.get_as("ml")
+				if as_volume is not None:
+					# Can convert to volume!
+					if by_volume is None:
+						by_volume = as_volume
+					else:
+						by_volume._cardinality += as_volume.cardinality
+					continue
+
+				# Can convert neither to mass nor volume
+				remainder.append(ingredient)
+
+			result = [ by_mass, by_volume ] + remainder
+			result = [ ing for ing in result if ing is not None ]
+			return result
+
+		new_list = collections.defaultdict(list)
+		for ingredient in self:
+			new_list[ingredient.ingredient_id].append(ingredient)
+		for ingredient in other:
+			new_list[ingredient.ingredient_id].append(ingredient)
+
+		new_items = [ ]
+		for ingredients in new_list.values():
+			new_items += merge_items(ingredients)
+		self._items = new_items
+		return self
 
 	def __iter__(self):
-		for ingredient in self._node.ingredient:
-			yield Ingredient.from_xmlnode(ingredient, self._meta)
+		return iter(self._items)
 
 	def dump(self):
 		for ingredient in self:
@@ -172,10 +221,21 @@ class Recipe():
 	def __init__(self, xml_filename, metadata):
 		self._xml = XMLParser().parsefile(xml_filename)
 		self._meta = metadata
+		self._shopping_list = self._create_shopping_list()
+
+	def _create_shopping_list(self):
+		slist = IngredientList("Shopping List", [ ], self._meta)
+		for ingredient_list in self.ingredient_classes:
+			slist += ingredient_list
+		return slist
 
 	@property
 	def name(self):
 		return self._xml["name"]
+
+	@property
+	def shopping_list(self):
+		return self._shopping_list
 
 	@property
 	def ingredient_class_cnt(self):
@@ -185,7 +245,7 @@ class Recipe():
 	def ingredient_classes(self):
 		for node in self._xml.ingredients.getallchildren():
 			if node.getname() != "#cdata":
-				yield IngredientList(node, self._meta)
+				yield IngredientList.from_xmlnode(node, self._meta)
 
 	@property
 	def serves(self):

@@ -13,7 +13,6 @@
 			<ingredient name="egg/l" count=".5" unit="kg" />
 			<ingredient name="pepper" count="10" unit="g" />
 			<ingredient name="flour" count="1" unit="cup" />
-
 			
 			<ingredient name="flour" count="2 2/3" unit="cup" />
 			<ingredient name="bakingpowder" count="1/2" unit="teasp" />
@@ -21,7 +20,6 @@
 			<ingredient name="butter" count="1" unit="cup" />
 			<ingredient name="sugar" count="1" unit="cup" />
 			<ingredient name="vanilla" count="1 1/2" unit="teasp" />
-
 		</dressing>
 	</ingredients>
 	<preparation>

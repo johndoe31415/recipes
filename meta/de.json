@@ -140,7 +140,8 @@
 		"jar":				" Glas| Gläser",
 		"drop":				" Tropfen",
 		"bottle":			" Flasche|+n",
-		"bottle/tiny":		" Fläschchen"
+		"bottle/tiny":		" Fläschchen",
+		"cup":				" Tasse"
 	},
 	"servings": {
 		"cookie":			"Keks|+e",
