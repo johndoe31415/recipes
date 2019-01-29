@@ -44,6 +44,14 @@ ${ingredient.ingredient_name.singular}
 %endif
 </%def>
 
+<div class="centerblock" id="menu" style="display: none">
+	<label><input type="checkbox" class="option_checkbox" id="ck_showoriginal" value="1">Originalangaben</label>
+	<label><input type="checkbox" class="option_checkbox" id="ck_showalt" value="1">Alternativen</label>
+	<label><input type="checkbox" class="option_checkbox" id="ck_showshoppinglist" value="1">Einkaufsliste</label>
+</div>
+
+<div class="centerblock" id="content" style="display: none">
+
 <h1>${r.name}</h2>
 
 <h2>Zutaten</h2>
@@ -78,9 +86,15 @@ ${ingredient.ingredient_name.singular}
 </ul>
 %endif
 
+<div id="shoppinglist">
+<h2>Einkaufsliste</h2>
+
+</div>
+
 <h2>Zubereitung</h2>
 ${render_preparation(r.preparation)}
 
+</div>
 
 <script language="JavaScript">
 	initialize_recipe();

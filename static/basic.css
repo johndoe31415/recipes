@@ -4,6 +4,11 @@ body {
 	border: 25px;
 }
 
+div.centerblock {
+	width: 670px;
+	margin: 0 auto;
+}
+
 h1 {
 	font-size: 1.75em;
 	text-decoration: underline wavy gray;	
@@ -27,7 +32,6 @@ span.scaletext:hover {
 }
 
 div.step {
-	width: 50%;
 	margin-left: 10px;
 	margin-bottom: 15px;
 }
@@ -38,4 +42,25 @@ span.temperature {
 
 span.time {
 	color: #2980b9;
+}
+
+div.ingredient {
+	margin-bottom: 4px;
+	padding: 3px;
+}
+
+div.ingredient.alt {
+	background-color: #aaa;
+}
+
+div.ingredient.alt > .scaletext {
+	color: #fff;
+}
+
+div.ingredient.original {
+	background-color: #aaa;
+}
+
+div.ingredient.original > .scaletext {
+	color: #fff;
 }

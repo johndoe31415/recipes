@@ -16,3 +16,7 @@ span.time {
 	color: black;
 	font-weight: bold;
 }
+
+#menu {
+	display: none;
+}

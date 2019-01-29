@@ -129,6 +129,20 @@ function scaletext_event_callback(event) {
 	}
 }
 
+function option_checkbox_callback(event) {
+	const ck_showoriginal = document.getElementById("ck_showoriginal");
+	const ck_showalt = document.getElementById("ck_showalt");
+	const ck_showshoppinglist = document.getElementById("ck_showshoppinglist");
+
+	document.querySelectorAll("div.ingredient.original").forEach(function(node) {
+		node.style.display = ck_showoriginal.checked ? "" : "none";
+	});
+	document.querySelectorAll("div.ingredient.alt").forEach(function(node) {
+		node.style.display = ck_showalt.checked ? "" : "none";
+	});
+	document.getElementById("shoppinglist").style.display = ck_showshoppinglist.checked ? "" : "none";
+}
+
 function initialize_recipe() {
 	document.querySelectorAll(".scalar").forEach(function(node) {
 		node.setAttribute("value", text_to_value(node.innerHTML));
@@ -136,5 +150,12 @@ function initialize_recipe() {
 	document.querySelectorAll(".scaletext").forEach(function(node) {
 		scaletext_scaleby(node, 1.0);
 		node.onclick = scaletext_event_callback;
+	});
+	document.querySelectorAll(".option_checkbox").forEach(function(node) {
+		node.onclick = option_checkbox_callback;
+	});
+	option_checkbox_callback(null);
+	document.querySelectorAll(".centerblock").forEach(function(node) {
+		node.style = "";
 	});
 }

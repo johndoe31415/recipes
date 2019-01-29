@@ -1,7 +1,7 @@
 {
 	"ingredients": {
 		"sugar": {
-			"density_g_per_l": 820,
+			"density_g_per_l":	820,
 			"conversions": {
 				"tblsp":	18.2,
 				"teasp":	6.2
