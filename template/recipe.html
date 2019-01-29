@@ -89,7 +89,8 @@ ${ingredient.ingredient_name.singular}
 <div id="shoppinglist">
 <h2>Einkaufsliste</h2>
 <ul>
-%for ingredient in r.shopping_list:
+%for orig_ingredient in r.shopping_list:
+	<% ingredient = orig_ingredient.get_preferred() %>
 	<li>
 		<div class="ingredient">${render_ingredient(ingredient)}</div>
 	</li>
