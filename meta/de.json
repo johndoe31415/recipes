@@ -50,10 +50,42 @@
 			},
 			"prefer":	"g"
 		},
+		"sugar/brown": {
+			"name":	"Brauner Zucker",
+			"sold": {
+				"Packung":	"TODO g"
+			},
+			"prefer":	"g"
+		},
+		"sugar/vanilla": {
+			"name":	"Vanillezucker",
+			"sold": {
+				"Päckchen":	"8 g"
+			},
+			"prefer":	"g"
+		},
+		"water": {
+			"name":	"Wasser",
+			"prefer":	"ml"
+		},
 		"cacao": {
 			"name":	"Kakaopulver",
 			"sold": {
 				"Packung":	"400 g"
+			},
+			"prefer":	"g"
+		},
+		"chocolate/bswt": {
+			"name":	"Schokolade Zartbitter",
+			"sold": {
+				"Tafel":	"100 g"
+			},
+			"prefer":	"g"
+		},
+		"chocolate/wmilk": {
+			"name":	"Schokolade Vollmilch",
+			"sold": {
+				"Tafel":	"100 g"
 			},
 			"prefer":	"g"
 		},
@@ -129,6 +161,20 @@
 				"Packung":	"500 g"
 			},
 			"prefer":	"g"
+		},
+		"sourcream": {
+			"name":	"Saure Sahne TODO%",
+			"sold": {
+				"Becher":	"TODO ml"
+			},
+			"prefer":	"ml"
+		},
+		"curd": {
+			"name":	"Quark TODO%",
+			"sold": {
+				"Becher":	"TODO g"
+			},
+			"prefer":	"g"
 		}
 	},
 	"units": {
@@ -147,6 +193,8 @@
 		"cookie":			"Keks|+e",
 		"bakingsheet":		"Backblech|+e",
 		"person":			"Person|+en",
-		"waffle":			"Waffel|+n"
+		"waffle":			"Waffel|+n",
+		"springform-28cm":	"Springform 28cm|Springformen 28cm",
+		"springform-18cm":	"Springform 18cm|Springformen 18cm"
 	}
 }

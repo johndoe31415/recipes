@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <recipe name="Grießbrei" lang="de">
 	<ingredients>
-		<dressing name="Brei">
+		<porridge name="Brei">
 			<ingredient name="commonwheatmeal" count="3" unit="tblsp" />
 			<ingredient name="sugar" count="2" unit="tblsp" />
 			<ingredient name="starch" count="1" unit="tblsp" />
 			<ingredient name="milk" count="500" unit="ml" />
-		</dressing>
+		</porridge>
 	</ingredients>
 	<preparation>
 		<step>
