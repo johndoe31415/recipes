@@ -135,17 +135,17 @@
 			"prefer":	"#"
 		},
 		"potato": {
-			"name":	"Kartoffel"
+			"name":	"Kartoffel|+n"
 		},
 		"pickles": {
 			"name":	"Essiggurke|+n",
 			"prefer":	"g"
 		},
 		"carrot": {
-			"name":	"Karotte"
+			"name":	"Karotte|+n"
 		},
 		"mushroom": {
-			"name":	"Champignon"
+			"name":	"Champignon|+s"
 		},
 		"pepper": {
 			"name":	"Pfeffer"
@@ -160,7 +160,8 @@
 			"name":	"Paprika Edelsüß"
 		},
 		"lemon": {
-			"name":	"Zitrone"
+			"name":	"Zitrone|+n",
+			"prefer":	"#"
 		},
 		"lemon/juice": {
 			"name":	"Zitronensaft"
@@ -177,7 +178,7 @@
 			"prefer":	"#"
 		},
 		"orange/oil": {
-			"name":	"Orangenöl"	
+			"name":	"Orangenöl"
 		},
 		"olive/oil": {
 			"name":	"Olivenöl"
