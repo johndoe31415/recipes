@@ -137,9 +137,6 @@
 		"potato": {
 			"name":	"Kartoffel|+n"
 		},
-		"potato": {
-			"name":	"Kartoffel"
-		},
 		"pickles": {
 			"name":	"Essiggurke|+n",
 			"prefer":	"g"
@@ -149,12 +146,6 @@
 		},
 		"mushroom": {
 			"name":	"Champignon|+s"
-		},
-		"carrot": {
-			"name":	"Karotte"
-		},
-		"mushroom": {
-			"name":	"Champignon"
 		},
 		"pepper": {
 			"name":	"Pfeffer"
@@ -187,10 +178,7 @@
 			"prefer":	"#"
 		},
 		"orange/oil": {
-			"name":	"Orangenöl"	
-		},
-		"olive/oil": {
-			"name":	"Olivenöl"
+			"name":	"Orangenöl"
 		},
 		"olive/oil": {
 			"name":	"Olivenöl"
