@@ -140,10 +140,13 @@ class Ingredient():
 		return alt
 
 	def __str__(self):
-		if self.is_unitary:
-			return "%.0f %s" % (self.cardinality, self.ingredient_id)
+		if self.cardinality is None:
+			return "%s" % (self.ingredient_id)
 		else:
-			return "%.1f %s %s" % (self.cardinality, self.unit_id, self.ingredient_id)
+			if self.is_unitary:
+				return "%.0f %s" % (self.cardinality, self.ingredient_id)
+			else:
+				return "%.1f %s %s" % (self.cardinality, self.unit_id, self.ingredient_id)
 
 class IngredientList():
 	def __init__(self, name, items, metadata):
@@ -209,13 +212,13 @@ class IngredientList():
 	def dump(self):
 		for ingredient in self:
 			print("%s" % (ingredient))
-			if ingredient.get_mass() is not None:
-				print("    mass: %.0fg" % (ingredient.get_mass("g")))
-			if ingredient.get_volume() is not None:
-				print("    vol : %.0fml" % (ingredient.get_volume("ml")))
-			if ingredient.get_unitary_units() is not None:
-				print("    unit: %.1f" % (ingredient.get_unitary_units()))
-			print()
+			if ingredient.cardinality is not None:
+				if ingredient.get_as("g") is not None:
+					print("    mass: %.0fg" % (ingredient.get_as("g").cardinality))
+				if ingredient.get_as("ml") is not None:
+					print("    vol : %.0fml" % (ingredient.get_as("ml").cardinality))
+				if ingredient.get_as("#") is not None:
+					print("    unit: %.1f" % (ingredient.get_as("#").cardinality))
 
 class Recipe():
 	def __init__(self, xml_filename, metadata):

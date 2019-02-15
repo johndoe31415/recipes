@@ -46,6 +46,11 @@ lookup = TemplateLookup([ args.templatedir ], strict_undefined = True, input_enc
 meta = Metadata(conversion_file = args.metadir + "/conversion.json", ingredient_file = args.metadir + "/" + args.lang + ".json")
 recipe = Recipe(xml_filename = args.infile, metadata = meta)
 
+if args.verbose:
+	for iclass in recipe.ingredient_classes:
+		iclass.dump()
+		print("-" * 120)
+
 template = lookup.get_template("recipe.html")
 output = template.render(r = recipe, m = meta, t = Tools)
 with open(args.outfile, "w") as f:

@@ -7,6 +7,12 @@
 				"teasp":	6.2
 			}
 		},
+		"sugar/pwdr": {
+			"density_g_per_l":	458
+		},
+		"cacao": {
+			"density_g_per_l":	416
+		},
 		"starch": {
 			"density_g_per_l": 480,
 			"conversions": {
@@ -25,6 +31,12 @@
 		},
 		"milk": {
 			"density_g_per_l": 1000
+		},
+		"butter": {
+			"conversions": {
+				"stick":	113
+			},
+			"density_g_per_l": 907
 		}
 	},
 	"units": {
@@ -34,7 +46,9 @@
 			"floz":		29.5735,
 			"cup":		240,
 			"tblsp":	14.8,
-			"teasp":	4.9333
+			"teasp":	4.9333,
+
+			"stick":	125
 		},
 		"mass": {
 			"g":		1,

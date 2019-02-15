@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Claire's Sheet Cake" lang="de">
+	<ingredients>
+		<dough name="Teig">
+			<ingredient name="sugar" count="2" unit="cup" />
+			<ingredient name="bakingpowder" count="1" unit="tblsp" />
+			<ingredient name="bakingsoda" count="1/2" unit="tblsp" />
+			<ingredient name="salt" count="1" unit="teasp" />
+			<ingredient name="flour" count="3 1/4" unit="cup" />
+
+			<ingredient name="egg/l" count="2" />
+			<ingredient name="eggyoke/l" count="5" />
+			<ingredient name="buttermilk" count="1 1/4" unit="cup" />
+			<ingredient name="sunflower/oil" count="2" unit="tblsp" />
+			<ingredient name="vanilla" count="1" unit="tblsp" />
+
+			<ingredient name="butter" count="2" unit="stick" />
+		</dough>
+		<icing name="Icing">
+			<ingredient name="creamcheese" count="6" unit="oz" />
+			<ingredient name="butter" count="1 1/2" unit="stick" />
+			<ingredient name="sugar/pwdr" count="2" unit="cup" />
+			<ingredient name="cacao" count="1/4" unit="cup" />
+			<ingredient name="salt" count="3/4" unit="teasp" />
+			<ingredient name="vanilla" count="1" unit="teasp" />
+		</icing>
+	</ingredients>
+	<!--
+	<serves>
+		<option value="springform-28cm" count="1" />
+		<option value="springform-18cm" count="2.5" />
+	</serves>
+	-->
+	<preparation>
+		<step>
+			Backform 30x20cm mit <i>butter</i> einreiben und mit <i>flour</i> mehlen. Ofen auf <temp>160°C</temp> vorheizen.
+		</step>
+		<step>
+			<i>sugar</i>, <i>bakingpowder</i>, <i>bakingsoda</i>, <i>salt</i> und <i>flour</i> vermengen.
+		</step>
+		<step>
+			In separater Schüssel <i>egg/l</i>, <i>eggyoke/l</i>, <i>buttermilk</i>, <i>sunflower/oil</i> und <i>vanilla</i> vermengen.			
+		</step>
+		<step>
+			Zimmerwarme <i>butter</i> mit trockenen Zutaten mit Mixer vermengen bis alles homogen aussieht. Etwa 4-5 Minuten.
+		</step>
+		<step>
+			Danach Hälfte der flüssigen Zutaten zugeben und gut verrühren. Dann restliche flüssige Zutaten einrühren, etwa 1 Minute.
+		</step>
+		<step>
+			Bei <temp>160°C</temp> etwa <time>45-55 Minuten</time> backen.
+		</step>
+		<step>
+			<i>butter</i> und <i>creamcheese</i>, beide auf Zimmertemperatur, mit Mixer verrühren. dann <i>sugar/powdered</i>, <i>cacao</i>, <i>salt</i> und <i>vanilla</i> hinzugeben und auch verrühren.
+		</step>
+	</preparation>
+</recipe>

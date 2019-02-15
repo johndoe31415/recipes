@@ -4,6 +4,10 @@
 			"name": "Vollmilch 3.5%",
 			"prefer":	"ml"
 		},
+		"buttermilk": {
+			"name": "Buttermilch 3.5%",
+			"prefer":	"ml"
+		},
 		"commonwheatmeal": {
 			"name": "Weichweizengrieß",
 			"prefer":	"g"
@@ -13,6 +17,10 @@
 			"sold": {
 				"Packung":	"10"
 			},
+			"prefer":	"#"
+		},
+		"eggyoke/l": {
+			"name": "Eigelb",
 			"prefer":	"#"
 		},
 		"flour": {
@@ -110,6 +118,9 @@
 			},
 			"prefer":	"teasp"
 		},
+		"bakingsoda": {
+			"name":	"Backnatron"
+		},
 		"pasta/spiral": {
 			"name":	"Spiralnudeln",
 			"sold": {
@@ -119,6 +130,10 @@
 		},
 		"cheddar": {
 			"name":	"Cheddar"
+		},
+		"creamcheese": {
+			"name":	"Frischkäse",
+			"prefer":	"g"
 		},
 		"salmon": {
 			"name":	"Lachs"
@@ -183,6 +198,9 @@
 		"olive/oil": {
 			"name":	"Olivenöl"
 		},
+		"sunflower/oil": {
+			"name":	"Sonnenblumenöl"
+		},
 		"vanilla": {
 			"name":	"Vanilleextrakt"
 		},
@@ -218,7 +236,8 @@
 		"drop":				" Tropfen",
 		"bottle":			" Flasche|+n",
 		"bottle/tiny":		" Fläschchen",
-		"cup":				" Tasse"
+		"cup":				" Tasse|+n",
+		"stick":			" Stick"
 	},
 	"servings": {
 		"cookie":			"Keks|+e",
