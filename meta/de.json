@@ -224,6 +224,13 @@
 				"Becher":	"TODO g"
 			},
 			"prefer":	"g"
+		},
+		"pudding/vanilla": {
+			"name":	"Puddingpulver Vanille",
+			"sold": {
+				"Packung":	"37 g"
+			},
+			"prefer":	"pack"
 		}
 	},
 	"units": {
@@ -237,7 +244,8 @@
 		"bottle":			" Flasche|+n",
 		"bottle/tiny":		" Fläschchen",
 		"cup":				" Tasse|+n",
-		"stick":			" Stick"
+		"stick":			" Stick",
+		"pack":				" Packung|+en"
 	},
 	"servings": {
 		"cookie":			"Keks|+e",
