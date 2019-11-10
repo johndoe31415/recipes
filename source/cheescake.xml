@@ -11,7 +11,7 @@
 		<filling name="Füllung">
 			<ingredient name="sugar" count="175" unit="g" />
 			<ingredient name="sugar/vanilla" count="8" unit="g" />
-			<ingredient name="puddingpowder/vanilla" count="17" unit="g" />
+			<ingredient name="puddingpowder/vanilla" count="37" unit="g" />
 
 			<ingredient name="butter" count="100" unit="g" />
 			<ingredient name="milk" count="250" unit="ml" />
