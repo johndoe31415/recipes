@@ -56,7 +56,7 @@ function value_to_text(value, do_round) {
 		} else {
 			return value.toFixed(1);
 		}
-	} else if (value < 100) {
+	} else if (value < 200) {
 		if (do_round) {
 			return round_to_nearest(value, 5.0).toFixed(0);
 		} else {
