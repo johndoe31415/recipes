@@ -61,7 +61,7 @@
 		"sugar/brown": {
 			"name":	"Brauner Zucker",
 			"sold": {
-				"Packung":	"TODO g"
+				"Packung":	"500 g"
 			},
 			"prefer":	"g"
 		},
@@ -104,6 +104,13 @@
 			},
 			"prefer":	"g"
 		},
+		"curd/20": {
+			"name":	"Quark 20%",
+			"sold": {
+				"Packung":	"250 g"
+			},
+			"prefer":	"g"
+		},
 		"rum": {
 			"name":	"Rum",
 			"sold": {
@@ -117,6 +124,20 @@
 				"Päckchen":	"17 g"
 			},
 			"prefer":	"teasp"
+		},
+		"puddingpowder/vanilla": {
+			"name":	"Puddingpulver Vanille",
+			"sold": {
+				"Päckchen":	"37 g"
+			},
+			"prefer":	"pack"
+		},
+		"puddingpowder/chocolate": {
+			"name":	"Puddingpulver Schokolade",
+			"sold": {
+				"Päckchen":	"37 g"
+			},
+			"prefer":	"pack"
 		},
 		"bakingsoda": {
 			"name":	"Backnatron"
@@ -143,6 +164,10 @@
 		},
 		"apple": {
 			"name":	"Apfel|Äpfel",
+			"prefer":	"#"
+		},
+		"mandarin": {
+			"name":	"Mandarine|+n",
 			"prefer":	"#"
 		},
 		"tomato": {
@@ -217,20 +242,6 @@
 				"Becher":	"TODO ml"
 			},
 			"prefer":	"ml"
-		},
-		"curd": {
-			"name":	"Quark TODO%",
-			"sold": {
-				"Becher":	"TODO g"
-			},
-			"prefer":	"g"
-		},
-		"pudding/vanilla": {
-			"name":	"Puddingpulver Vanille",
-			"sold": {
-				"Packung":	"37 g"
-			},
-			"prefer":	"pack"
 		}
 	},
 	"units": {

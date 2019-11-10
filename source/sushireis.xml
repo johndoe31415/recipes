@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Grießbrei" lang="de">
+	<ingredients>
+		<porridge name="Brei">
+			<ingredient name="rice" count="500" unit="g" />
+			<ingredient name="water" count="800" unit="ml" />
+			<ingredient name="salt" count="2" unit="tblsp" />
+			<ingredient name="vinegar" count="2" unit="tblsp" />
+			<ingredient name="sugar" count="1 1/2" unit="tblsp" />
+		</porridge>
+	</ingredients>
+	<preparation>
+		<step>
+			Alle Zutaten vermengen und zum Kochen bringen.
+		</step>
+		<step>
+			Wenn kochend, auf Stufe 1 herunterschalten, Deckel auf den Topf geben und 10 Minuten köcheln lassen. 
+		</step>
+		<step>
+			Auf Stunfe 0 herunterschalten und noch 10 Minuten auf dem Herd stehen lassen.
+		</step>
+	</preparation>
+</recipe>

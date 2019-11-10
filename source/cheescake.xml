@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Käsekuchen" lang="de">
+	<ingredients>
+		<dough name="Teig">
+			<ingredient name="flour" count="225" unit="g" />
+			<ingredient name="bakingpowder" count="15" unit="g" />
+			<ingredient name="sugar" count="80" unit="g" />
+			<ingredient name="butter" count="85" unit="g" />
+			<ingredient name="egg/l" count="2" />
+		</dough>
+		<filling name="Füllung">
+			<ingredient name="sugar" count="175" unit="g" />
+			<ingredient name="sugar/vanilla" count="8" unit="g" />
+			<ingredient name="puddingpowder/vanilla" count="17" unit="g" />
+
+			<ingredient name="butter" count="100" unit="g" />
+			<ingredient name="milk" count="250" unit="ml" />
+			<ingredient name="curd/20" count="500" unit="g" />
+			<ingredient name="yogurt" count="250" unit="g" />
+			<ingredient name="egg/l" count="2" />
+
+			<ingredient name="mandarin" count="175" unit="g" />
+		</filling>
+	</ingredients>
+	<preparation>
+		<step>
+			Teig verkneten, Springform einfetten und Einlegen.
+		</step>
+		<step>
+			Füllung vermischen, die flüssige Masse in die Springform einfüllen.
+		</step>
+		<step>
+			Im Umluftofen bei <temp>160°C</temp> ca. 60 Minuten backen.
+		</step>
+	</preparation>
+</recipe>

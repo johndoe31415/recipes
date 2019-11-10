@@ -4,7 +4,7 @@
 		<dough name="Teig">
 			<ingredient name="sugar" count="150" unit="g" />
 			<ingredient name="flour" count="250" unit="g" />
-			<ingredient name="pudding/vanilla" count="37" unit="g" />
+			<ingredient name="puddingpowder/vanilla" count="37" unit="g" />
 			<ingredient name="bakingpowder" count="3" unit="teasp" />
 			<ingredient name="salt" count="1" unit="pinch" />
 			<ingredient name="butter" count="150" unit="g" />

@@ -7,7 +7,7 @@
 			<ingredient name="milk" count="300" unit="ml" />
 			<ingredient name="butter" count="80" unit="g" />
 			<ingredient name="sugar" count="4" unit="tblsp" />
-			<ingredient name="curd" count="280" unit="g" />
+			<ingredient name="curd/20" count="280" unit="g" />
 			<ingredient name="sourcream" count="80" unit="ml" />
 			<ingredient name="salt" count="1" unit="pinch" />
 		</dough>
