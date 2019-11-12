@@ -37,4 +37,4 @@ class UnitConversion():
 			raise UnknownUnitException("Cannot convert %.3f %s to anything, because I don't know the unit. Known: %s" % (value, to_unit, to_unit, ", ".join(sorted(self._dict.keys()))))
 		from_scalar = self._dict[from_unit]
 		to_scalar = self._dict[to_unit]
-		return value * from_scalar / to_scalar
+		return value / from_scalar * to_scalar

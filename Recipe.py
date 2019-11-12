@@ -110,7 +110,7 @@ class Ingredient():
 			if density_g_per_l is not None:
 				mass_grams = self._meta.mass_units(self.cardinality, self.unit_id, "g")
 				volume_liters = mass_grams / density_g_per_l
-				return self._create_converted_to(self._meta.volume_units(mass_grams, "l", unit), unit)
+				return self._create_converted_to(self._meta.volume_units(volume_liters, "l", unit), unit)
 
 	def _get_as_unitary(self):
 		if self.is_unitary:
@@ -258,4 +258,3 @@ class Recipe():
 	@property
 	def preparation(self):
 		return self._xml.preparation
-
