@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<recipe name="Karottenkuchen" lang="de">
+<recipe name="Triester Torte" lang="de">
 	<ingredients>
 		<dough name="Teig">
 			<ingredient name="rusk" count="100" unit="g" />
