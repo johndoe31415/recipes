@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Karottenkuchen" lang="de">
+	<ingredients>
+		<dough name="Teig">
+			<ingredient name="rusk" count="100" unit="g" />
+			<ingredient name="sugar" count="150" unit="g" />
+			<ingredient name="hazelnut" count="200" unit="g" />
+			<ingredient name="bakingpowder" count="2" unit="teasp" />
+			<ingredient name="salt" count="1" unit="pinch" />
+
+			<ingredient name="butter" count="200" unit="g" />
+			<ingredient name="chocolate/bswt" count="120" unit="g" />
+			<ingredient name="rum" count="60" unit="ml" />
+			<ingredient name="egg/l" count="6" />
+		</dough>
+		<glazing name="Glasur">
+			<ingredient name="marmelade" count="100" unit="g" />
+			<ingredient name="chocolate/nougat" count="120" unit="g" />
+			<ingredient name="whippedcream" count="50" unit="ml" />
+		</glazing>
+	</ingredients>
+	<preparation>
+		<step>
+			Zwieback im Mixer zermahlen. Mit Zucker, Haselnüssen, Backpulver und Salt vermengen.
+		</step>
+		<step>
+			Butter und Zartbitter-Schokolade in der Mikrowelle vorsichtig schmelzen. Rum und Eier zugeben.
+		</step>
+		<step>
+			Die flüssigen Zutaten unter Rühren langsam unter die festen Zutaten geben.
+		</step>
+		<step>
+			Teig in eine gefettete Springform 28cm, einfüllen und bei etwa 160°C Umluft 45 Minuten backen.
+		</step>
+		<step>
+			Nach Erkalten des Teiges äußere Springform abnehmen.
+		</step>
+		<step>
+			Teig mit Marmelade bestreichen (Erdbeer oder Aprikose).
+		</step>
+		<step>
+			Schlagsahne mit Nougat-Schokolade aufschmelzen (im Topf oder auch ganz vorsichtig in der Mikrowelle). Flüssige Schokoladenglasur über Marmelade geben.
+		</step>
+	</preparation>
+</recipe>

@@ -90,6 +90,13 @@
 			},
 			"prefer":	"g"
 		},
+		"chocolate/nougat": {
+			"name":	"Schokolade Nougat",
+			"sold": {
+				"Tafel":	"100 g"
+			},
+			"prefer":	"g"
+		},
 		"chocolate/wmilk": {
 			"name":	"Schokolade Vollmilch",
 			"sold": {
@@ -256,6 +263,14 @@
 		},
 		"walnut": {
 			"name":	"Walnuss|Walnüsse",
+			"prefer":	"g"
+		},
+		"hazelnut": {
+			"name":	"Haselnuss|Haselnüsse",
+			"prefer":	"g"
+		},
+		"rusk": {
+			"name":	"Zwieback",
 			"prefer":	"g"
 		}
 	},
