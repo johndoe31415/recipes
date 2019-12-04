@@ -28,11 +28,11 @@ cat >docs/index.html <<EOF
 <body>
 EOF
 
-for SRC in source/*; do
+for SRC in source/*.xml; do
 	if [ ! -f "$SRC" ]; then
 		continue
 	fi
-	NAME="${SRC:7:$((${#SRC}-11))}"	
+	NAME="${SRC:7:$((${#SRC}-11))}"
 	./renderrecipe -fv "$SRC" docs/${NAME}.html
 	echo "<a href=\"${NAME}.html\">${NAME}</a><br />" >>docs/index.html
 done

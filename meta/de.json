@@ -236,12 +236,27 @@
 			},
 			"prefer":	"g"
 		},
+		"whippedcream": {
+			"name":	"Schlagsahne TODO%",
+			"sold": {
+				"Becher":	"TODO ml"
+			},
+			"prefer":	"ml"
+		},
 		"sourcream": {
 			"name":	"Saure Sahne TODO%",
 			"sold": {
 				"Becher":	"TODO ml"
 			},
 			"prefer":	"ml"
+		},
+		"cinnamon": {
+			"name":	"Zimt",
+			"prefer":	"g"
+		},
+		"walnut": {
+			"name":	"Walnuss|Walnüsse",
+			"prefer":	"g"
 		}
 	},
 	"units": {

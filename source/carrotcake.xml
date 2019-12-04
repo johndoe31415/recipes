@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Karottenkuchen" lang="de">
+	<ingredients>
+		<dough name="Teig">
+			<ingredient name="carrot" count="500" unit="g" />
+			<ingredient name="flour" count="320" unit="g" />
+			<ingredient name="sugar/brown" count="200" unit="g" />
+			<ingredient name="egg/l" count="3" />
+			<ingredient name="cinnamon" count="1" unit="tblsp" />
+			<ingredient name="bakingpowder" count="1" unit="teasp" />
+			<ingredient name="bakingsoda" count="1" unit="teasp" />
+			<ingredient name="sunflower/oil" count="150" unit="g" />
+			<ingredient name="walnut" count="150" unit="g" />
+		</dough>
+		<filling name="Füllung">
+			<ingredient name="creamcheese" count="500" unit="g" />
+			<ingredient name="whippedcream" count="100" unit="ml" />
+			<ingredient name="sugar/pwdr" count="100" unit="g" />
+		</filling>
+	</ingredients>
+	<preparation>
+		<step>
+			Karotten reiben. Wenn zu saftig, ausdrücken und Saft beiseite stellen. Nüsse mit einem Messer zerkleinern.			
+		</step>
+		<step>
+			Eier und Zucker schaumig schlagen. Mit Öl gut verrühren.
+		</step>
+		<step>
+			Alle trockenen Teigzutaten in eine Schale geben. Eierschaum langsam unterheben. Wenn Teig zu fest ist, Karottensaft beigeben. Teig nicht zu flüssig werden lassen.
+		</step>
+		<step>
+			Teig auf zwei Teile aufteilen und jeweils in 28cm Springform, die mit Butter gefettet wurde, backen. Auf Netz stellen und abkühlen lassen, danach für etwa 1 Stunde im Kühlschrank lassen.
+		</step>
+		<step>
+			Parallel Creme anrühren. Schlagsahne fest schlagen, Frischkäse und Puderzucker beigeben und auch für eine Stunde im Kühlschrank lassen.
+		</step>
+		<step>
+			Torte zusammenbauen und im Kühlschrank ziehen lassen.
+		</step>
+	</preparation>
+</recipe>
