@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Donuts" lang="de">
+	<ingredients>
+		<dough name="Teig">
+			<ingredient name="bakingpowder" count="2 1/2" unit="teasp" />
+			<ingredient name="flour" count="2" unit="cup" />
+			<ingredient name="bakingpowder" count="2 1/2" unit="teasp" />
+			<ingredient name="eggyoke/l" count="2" />
+			<ingredient name="yogurt" count="1" unit="cup" />
+			<ingredient name="sugar" count="1/2" unit="cup" />
+			<ingredient name="butter" count="2" unit="tblsp" />
+			<ingredient name="vanilla/extract" count="1" unit="teasp" />
+		</dough>
+	</ingredients>
+	<!--
+	<serves>
+		<option value="springform-28cm" count="1" />
+		<option value="springform-18cm" count="2.5" />
+	</serves>
+	-->
+	<preparation>
+		<step>
+			Todo
+		</step>
+	</preparation>
+</recipe>

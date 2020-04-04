@@ -37,6 +37,9 @@
 				"stick":	113
 			},
 			"density_g_per_l": 907
+		},
+		"yogurt": {
+			"density_g_per_l":	1000
 		}
 	},
 	"units": {
