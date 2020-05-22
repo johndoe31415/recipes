@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe name="Rhabarberkuchen" lang="de">
+	<ingredients>
+		<dough name="Zutaten">
+			<ingredient name="flour" count="250" unit="g" />
+			<ingredient name="starch" count="75" unit="g" />
+			<ingredient name="sugar" count="250" unit="g" />
+			<ingredient name="sugar/vanilla" count="8" unit="g" />
+			<ingredient name="bakingpowder" count="3" unit="teasp" />
+			<ingredient name="salt" count="1" unit="pinch" />
+			<ingredient name="butter" count="250" unit="g" />
+			<ingredient name="egg/l" count="4" />
+			<ingredient name="rhubarb" count="750" unit="g" />
+		</dough>
+	</ingredients>
+	<preparation>
+		<step>
+			<i>flour</i>, <i>starch</i>, <i>sugar</i>, <i>sugar/vanilla</i>, <i>bakingpowder</i> und <i>salt</i> trocken vermengen.
+		</step>
+		<step>
+			<i>butter</i> aufschmelzen und mit <i>egg/l</i> verrühren.
+		</step>
+		<step>
+			Enden des <i>rhubarb</i> abschneiden und <i>rhubarb</i> schälen, dann in ca. 1cm lange Stücke schneiden.
+		</step>
+		<step>
+			Geschnittenen <i>rhubarb</i> in den Teig einrühren und in 28cm Springform geben. Bei 160°C Umluft etwa 50 Minuten backen. Ofen ausschalten und noch 10 Minuten im warmen Ofen ziehen lassen.
+		</step>
+	</preparation>
+</recipe>

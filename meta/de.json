@@ -272,6 +272,10 @@
 		"rusk": {
 			"name":	"Zwieback",
 			"prefer":	"g"
+		},
+		"rhubarb": {
+			"name":	"Rhabarber",
+			"prefer":	"g"
 		}
 	},
 	"units": {
