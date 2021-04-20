@@ -3,21 +3,28 @@
 	<ingredients>
 		<porridge name="Brei">
 			<ingredient name="rice" count="500" unit="g" />
-			<ingredient name="water" count="800" unit="ml" />
-			<ingredient name="salt" count="2" unit="tblsp" />
-			<ingredient name="vinegar" count="2" unit="tblsp" />
-			<ingredient name="sugar" count="1 1/2" unit="tblsp" />
+			<ingredient name="water" count="700" unit="ml" />
+			<ingredient name="sugar" count="2" unit="tblsp" />
+			<ingredient name="mirin" count="2" unit="tblsp" />
+			<ingredient name="vinegar" count="6" unit="tblsp" />
+			<ingredient name="salt" count="2" unit="teasp" />
 		</porridge>
 	</ingredients>
 	<preparation>
 		<step>
-			Alle Zutaten vermengen und zum Kochen bringen.
+			Reis waschen.
 		</step>
 		<step>
-			Wenn kochend, auf Stufe 1 herunterschalten, Deckel auf den Topf geben und 10 Minuten köcheln lassen. 
+			Alle Zutaten vermengen und in offnem Topf zum Kochen bringen.
 		</step>
 		<step>
-			Auf Stunfe 0 herunterschalten und noch 10 Minuten auf dem Herd stehen lassen.
+			2 Minuten offen kochen.
+		</step>
+		<step>
+			Danach mit Deckel auf Stufe 1 15 Minuten ausquellen lassen.
+		</step>
+		<step>
+			Vom Herd nehmen, Deckel entfernen und mindestens 10 Minuten ziehen lassen.
 		</step>
 	</preparation>
 </recipe>
